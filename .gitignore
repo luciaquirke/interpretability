@@ -1,0 +1,5 @@
+*~
+bazel-*
+.bazelrc
+.idea
+.vscode
