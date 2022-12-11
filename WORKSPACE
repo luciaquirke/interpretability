@@ -9,9 +9,9 @@ load("@bazel_tools//tools/build_defs/repo:http.bzl", "http_archive")
 # depending on their debundled home, https://github.com/bazelbuild/rules_python:
 http_archive(
     name = "rules_python",
-    sha256 = "497ca47374f48c8b067d786b512ac10a276211810f4a580178ee9b9ad139323a",
-    strip_prefix = "rules_python-0.16.1",
-    url = "https://github.com/bazelbuild/rules_python/archive/refs/tags/0.16.1.tar.gz",
+    sha256 = "5fa3c738d33acca3b97622a13a741129f67ef43f5fdfcec63b29374cc0574c29",
+    strip_prefix = "rules_python-0.9.0",
+    url = "https://github.com/bazelbuild/rules_python/archive/refs/tags/0.9.0.tar.gz",
 )
 
 # Buildifier, a linter for BUILD files
@@ -63,14 +63,14 @@ http_archive(
 # Toolchain registration:
 load("@rules_python//python:repositories.bzl", "python_register_toolchains")
 python_register_toolchains(
-    name = "python3_9",
+    name = "python3_10",
     # Available versions are listed in @rules_python//python:versions.bzl.
     # We recommend using the same version your team is already standardized on.
-    python_version = "3.9",
+    python_version = "3.10",
 )
 
 # Create a central repo that knows about the dependencies needed from requirements.txt.
-load("@python3_9//:defs.bzl", "interpreter")
+load("@python3_10//:defs.bzl", "interpreter")
 load("@rules_python//python:pip.bzl", "pip_parse")
 pip_parse(
     python_interpreter_target = interpreter,
