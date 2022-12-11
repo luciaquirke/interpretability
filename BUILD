@@ -29,3 +29,16 @@ py_binary(
 buildifier(
     name = "buildifier",
 )
+
+load("@rules_python//python/pip_install:requirements.bzl", "compile_pip_requirements")
+
+compile_pip_requirements(
+    name = "requirements",
+    extra_args = [
+        "--allow-unsafe",
+        "--no-emit-index-url",
+    ],
+    env = {
+        "PIP_CONFIG_FILE": "~/.pip/pip.conf",
+    },
+)
