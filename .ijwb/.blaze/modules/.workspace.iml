@@ -2,7 +2,7 @@
 <module external.system.id="Blaze" type="JAVA_MODULE" version="4">
   <component name="FacetManager">
     <facet type="Python" name="Python">
-      <configuration sdkName="Python 3.8" />
+      <configuration sdkName="Python 3.9 virtualenv at ~/code/interpretability/venv" />
     </facet>
   </component>
   <component name="NewModuleRootManager">
@@ -18,6 +18,9 @@
     </content>
     <orderEntry type="inheritedJdk" />
     <orderEntry type="sourceFolder" forTests="false" />
-    <orderEntry type="library" name="Python 3.8 interpreter library" level="application" />
+    <orderEntry type="library" name="Python 3.9 virtualenv at ~/code/interpretability/venv interpreter library" level="application" />
+  </component>
+  <component name="PackageRequirementsSettings">
+    <option name="requirementsPath" value="$MODULE_DIR$/../../../requirements.in" />
   </component>
 </module>

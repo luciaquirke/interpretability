@@ -61,19 +61,19 @@ http_archive(
 )
 
 # Toolchain registration:
-load("@rules_python//python:repositories.bzl", "python_register_toolchains")
-python_register_toolchains(
-    name = "python3_10",
-    # Available versions are listed in @rules_python//python:versions.bzl.
-    # We recommend using the same version your team is already standardized on.
-    python_version = "3.10",
-)
+#load("@rules_python//python:repositories.bzl", "python_register_toolchains")
+#python_register_toolchains(
+#    name = "python3_10",
+#    # Available versions are listed in @rules_python//python:versions.bzl.
+#    # We recommend using the same version your team is already standardized on.
+#    python_version = "3.10",
+#)
 
 # Create a central repo that knows about the dependencies needed from requirements.txt.
-load("@python3_10//:defs.bzl", "interpreter")
+#load("@python3_10//:defs.bzl", "interpreter")
 load("@rules_python//python:pip.bzl", "pip_parse")
 pip_parse(
-    python_interpreter_target = interpreter,
+#    python_interpreter_target = interpreter,
     name = "my_deps",
     requirements_lock = "//:requirements.txt",
 )

@@ -17,3 +17,6 @@ additional_languages:
   python
   # scala
   # typescript
+
+  # test_sources:
+  # I think you need to glob your test files here
