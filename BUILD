@@ -16,20 +16,32 @@ compile_pip_requirements(
 load("@my_deps//:requirements.bzl", "requirement")
 
 py_binary(
-    name = "first",
+    name = "main",
     srcs = glob(["src/*.py"]),
     #    data = [":transform"],  # a cc_binary which we invoke at run time
     deps = [
         requirement("torch"),
         requirement("torchvision"),
-        requirement("torchaudio")
+        requirement("torchaudio"),
+        requirement("torchtext"),
+        requirement("numpy"),
+        requirement("matplotlib"),
+        requirement("spacy"),
+        requirement("seaborn")
     ]
 )
 
+load("@com_github_bazelbuild_buildtools//buildifier:def.bzl", "buildifier")
+
+buildifier(
+    name = "buildifier",
+)
+
+# Things I could add in the future
 #py_binary(
 #    name = "second",
 #    srcs = ["src/second.py"],
-#    visibility = ["//src/first.py"],
+#    visibility = ["//src/main.py"],
 #)
 
 #py_test(
@@ -41,12 +53,4 @@ py_binary(
 #    name = "example lib",
 #    srcs = ["deps/example_lib"]
 #)
-
-load("@com_github_bazelbuild_buildtools//buildifier:def.bzl", "buildifier")
-
-
-buildifier(
-    name = "buildifier",
-)
-
 
