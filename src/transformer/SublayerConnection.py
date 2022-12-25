@@ -1,5 +1,5 @@
 from torch import nn
-from layer_norm import LayerNorm
+from src.transformer.LayerNorm import LayerNorm
 
 
 # The output of each sub-layer is $\mathrm{LayerNorm}(x +

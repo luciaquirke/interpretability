@@ -1,6 +1,6 @@
 from torch import nn
-from ..utils.utils import clones
-from sublayer_connection import SublayerConnection
+from src.utils.utils import clones
+from src.transformer.SublayerConnection import SublayerConnection
 
 
 # Each layer has two sub-layers. The first is a multi-head

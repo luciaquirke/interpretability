@@ -1,6 +1,6 @@
 from torch import nn
-from sublayer_connection import SublayerConnection
-from ..utils.utils import clones
+from src.transformer.SublayerConnection import SublayerConnection
+from src.utils.utils import clones
 
 
 # In addition to the two sub-layers in each encoder layer, the decoder

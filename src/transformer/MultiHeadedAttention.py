@@ -1,7 +1,7 @@
 import math
 import torch
 import torch.nn as nn
-from ..utils.utils import clones
+from src.utils.utils import clones
 
 
 # ### Attention
@@ -109,7 +109,7 @@ class MultiHeadedAttention(nn.Module):
         ]
 
         # 2) Apply attention on all the projected vectors in batch.
-        x, self.attn = self.__attention(
+        x, self.attn = attention(
             query, key, value, mask=mask, dropout=self.dropout
         )
 
@@ -124,14 +124,15 @@ class MultiHeadedAttention(nn.Module):
         del value
         return self.linears[-1](x)
 
-    def __attention(query, key, value, mask=None, dropout=None):
-        "Compute 'Scaled Dot Product Attention'"
-        # -1 refers to the last dimension of query
-        d_k = query.size(-1)
-        scores = torch.matmul(query, key.transpose(-2, -1)) / math.sqrt(d_k)
-        if mask is not None:
-            scores = scores.masked_fill(mask == 0, -1e9)
-        p_attn = scores.softmax(dim=-1)
-        if dropout is not None:
-            p_attn = dropout(p_attn)
-        return torch.matmul(p_attn, value), p_attn
+
+def attention(query, key, value, mask=None, dropout=None):
+    "Compute 'Scaled Dot Product Attention'"
+    # -1 refers to the last dimension of query
+    d_k = query.size(-1)
+    scores = torch.matmul(query, key.transpose(-2, -1)) / math.sqrt(d_k)
+    if mask is not None:
+        scores = scores.masked_fill(mask == 0, -1e9)
+    p_attn = scores.softmax(dim=-1)
+    if dropout is not None:
+        p_attn = dropout(p_attn)
+    return torch.matmul(p_attn, value), p_attn

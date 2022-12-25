@@ -1,6 +1,6 @@
 from torch import nn
-from layer_norm import LayerNorm
-from ..utils.utils import clones
+from src.transformer.LayerNorm import LayerNorm
+from src.utils.utils import clones
 
 
 # The decoder is also composed of a stack of $N=6$ identical layers.

@@ -1,4 +1,4 @@
-from ..utils.utils import subsequent_mask
+from src.utils.utils import subsequent_mask
 
 
 class Batch:
