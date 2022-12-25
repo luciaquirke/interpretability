@@ -1,5 +1,22 @@
+from torch import nn
+import torch
+
+
+# ### Regularization - Label Smoothing
+#
+# During training, we employed label smoothing of value
+# $\epsilon_{ls}=0.1$ [(cite)](https://arxiv.org/abs/1512.00567).
+# This hurts perplexity, as the model learns to be more unsure, but
+# improves accuracy and BLEU score.
+
+# > We implement label smoothing using the KL div loss. Instead of
+# > using a one-hot target distribution, we create a distribution that
+# > has `confidence` of the correct word and the rest of the
+# > `smoothing` mass distributed throughout the vocabulary.
+
+# %% id="shU2GyiETsqK"
 class LabelSmoothing(nn.Module):
-    "Implement label smoothing."
+    """Implement label smoothing."""
 
     def __init__(self, size, padding_idx, smoothing=0.0):
         super(LabelSmoothing, self).__init__()

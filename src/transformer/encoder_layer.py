@@ -1,5 +1,13 @@
+from torch import nn
+from ..utils.utils import clones
+from sublayer_connection import SublayerConnection
+
+
+# Each layer has two sub-layers. The first is a multi-head
+# self-attention mechanism, and the second is a simple, position-wise
+# fully connected feed-forward network.
 class EncoderLayer(nn.Module):
-    "Encoder is made up of self-attn and feed forward (defined below)"
+    """Encoder is made up of self-attn and feed forward (defined below)"""
 
     def __init__(self, size, self_attn, feed_forward, dropout):
         super(EncoderLayer, self).__init__()
