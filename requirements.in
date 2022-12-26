@@ -11,3 +11,7 @@ torchtext
 seaborn
 inline
 ipython
+GPUtil
+altair
+typing
+torchdata

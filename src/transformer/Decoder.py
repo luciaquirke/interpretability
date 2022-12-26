@@ -1,5 +1,11 @@
+from torch import nn
+from src.transformer.LayerNorm import LayerNorm
+from src.utils.utils import clones
+
+
+# The decoder is also composed of a stack of $N=6$ identical layers.
 class Decoder(nn.Module):
-    "Generic N layer decoder with masking."
+    """Generic N layer decoder with masking."""
 
     def __init__(self, layer, N):
         super(Decoder, self).__init__()

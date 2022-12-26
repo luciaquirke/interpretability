@@ -1,5 +1,15 @@
+from torch import nn
+from src.transformer.SublayerConnection import SublayerConnection
+from src.utils.utils import clones
+
+
+# In addition to the two sub-layers in each encoder layer, the decoder
+# inserts a third sub-layer, which performs multi-head attention over
+# the output of the encoder stack.  Similar to the encoder, we employ
+# residual connections around each of the sub-layers, followed by
+# layer normalization.
 class DecoderLayer(nn.Module):
-    "Decoder is made of self-attn, src-attn, and feed forward (defined below)"
+    """Decoder is made of self-attn, src-attn, and feed forward (defined below)"""
 
     def __init__(self, size, self_attn, src_attn, feed_forward, dropout):
         super(DecoderLayer, self).__init__()

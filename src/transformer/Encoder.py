@@ -1,5 +1,10 @@
+from torch import nn
+from src.utils.utils import clones
+from src.transformer.LayerNorm import LayerNorm
+
+
 class Encoder(nn.Module):
-    "Core encoder is a stack of N layers"
+    """Core encoder is a stack of N layers"""
 
     def __init__(self, layer, N):
         super(Encoder, self).__init__()
@@ -7,7 +12,7 @@ class Encoder(nn.Module):
         self.norm = LayerNorm(layer.size)
 
     def forward(self, x, mask):
-        "Pass the input (and mask) through each layer in turn."
+        """Pass the input (and mask) through each layer in turn."""
         for layer in self.layers:
             x = layer(x, mask)
         return self.norm(x)
