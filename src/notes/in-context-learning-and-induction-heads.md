@@ -3,14 +3,14 @@
 ## Summary
 
 * 1 and 2 layer attention-only transformers (toy model).
-    * The model uses an input sequence to predict the tokens in an output sequence, one by one. 
 * Found a common circuit in the model, named "induction head"
-* The model's induction heads look back over the input sequence for previous instances of the current token (call it
+* "Context" is the input sequence to the model plus the previously produced tokens in the output sequence.
+* The model's induction heads look back over the context for previous instances of the current token (call it
 `A`), find the token that came after it last time (call it `B`), then predict that the same completion will occur again 
 (forming the sequence `A B . . . A -> B`).
 * Hypothesis: more complex induction heads in big LLMs do something more general: identify certain kinds of relevant 
-content from earlier in the input sequence.
-    * Possible definition: Induction heads are circuits which find patterns in an input sequence and apply them to predict 
+content from earlier in the context
+    * Possible definition: Induction heads are circuits which find patterns in the context and apply them to predict 
   an output token.
 * Induction heads form at the same steps of LLM training that the phase change (the little bump) in the loss curve occurs
 * Removing induction heads from the toy model removes most in-context learning as measured by decreasing loss at each 
@@ -51,8 +51,6 @@ LQ: it feels intuitive to me that induction heads could be more than two layers,
 pattern matches of the previous one? Come back to this.
 
 ## Definition of in-context Learning
-
-The "context" is the previously produced tokens in the model output.
 
 In-context learning is an emergent phenomenon in LLMs where tokens later in the context are easier to predict than 
 tokens earlier in the context. This phenomenon can be used to get LLMs to perform specific tasks like translation or 
@@ -96,7 +94,11 @@ The language model phase change may be generally important. NN capabilities some
 scale, meaning dangerous NN behaviour can emergy abruptly too, e.g. violent reward hacking. If we could predict these 
 phase changes or immediately shut down models when they happen we could improve safety.
 
-> the phase change we observe forms an interesting potential bridge between the microscopic domain of interpretability and the macroscopic domain of scaling laws and learning dynamics.
+> the phase change we observe forms an interesting potential bridge between the microscopic domain of interpretability 
+> and the macroscopic domain of scaling laws and learning dynamics.
+ 
+LQ: makes me wonder why all the induction heads are learned in the same few training steps. is there a mechanism for 
+propagating useful adaptations across the model, or are they forming independently?  
 
 ### Glossary
 
