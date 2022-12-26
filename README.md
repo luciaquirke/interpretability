@@ -10,6 +10,7 @@ I'm attempting to replicate and extend the paper [In-Context Learning and Induct
   - [x] Set up bazel
   - [x] Extract classes out
   - [x] Convert plots to matplotlib
+  
 Will add tests after the implementation proves useful.
   
 I chose Bazel because I use it at work and it's super useful for Java + I wanted to learn more about it. It was good overall but Bazel doesn't have good support for specifying a hermetic Python interpreter - the Bazel IntelliJ plugin doesn't recognise the specified interpreter and raises an error for every package import. So I stuck with a non-hermetic venv interpreter. 
