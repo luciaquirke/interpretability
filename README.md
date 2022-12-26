@@ -13,7 +13,7 @@ I'm attempting to replicate and extend the paper [In-Context Learning and Induct
   
 Will add tests after the implementation proves useful.
   
-I chose Bazel because I use it at work and it's super useful for Java + I wanted to learn more about it. It was good overall but Bazel doesn't have good support for specifying a hermetic Python interpreter - the Bazel IntelliJ plugin doesn't recognise the specified interpreter and raises an error for every package import. So I stuck with a non-hermetic venv interpreter. 
+I chose Bazel because I use it at work and it's super useful for Java + I wanted to learn more about it. It's good overall but doesn't have good support for specifying a hermetic Python interpreter - the Bazel IntelliJ plugin doesn't recognise the specified interpreter and raises an error for every package import. So I stuck with a non-hermetic venv interpreter - Python 3.9. 
 
 The complex translation example has a bug where the pytorch dataset it uses has an [introduced error with a fix which hasn't been released yet](https://github.com/pytorch/text/issues/2001). I haven't fixed it yet because I don't know if I need it. If I need it I'll install a nightly build of Pytorch/Torchtext or versions from before the bug was introduced.
 
