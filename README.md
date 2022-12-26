@@ -25,3 +25,7 @@ The matplotlib charts are hackily converted from the Altair plots because they'r
 - [ ] Draft design doc for induction heads implementation
 - [ ] Investigate uncertainties in design doc
 - [ ] Final design doc
+
+### Per-token loss analysis
+
+> We start with a collection of models. (In our use, we'll train several different model architectures, saving dozens of “snapshots” of each over the course of training. We’ll use this set of snapshots as our collection of models.) Next, we collect the log-likelihoods each model assigns to a consistent set of 10,000 random tokens, each taken from a different example sequence. We combine these log-likelihoods into a "per-token loss vector" and apply Principal Component Analysis (PCA):
