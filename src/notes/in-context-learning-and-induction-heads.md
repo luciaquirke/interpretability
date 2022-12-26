@@ -87,26 +87,30 @@ relationships:
 * Many phenomenon in this space scale smoothly from small to large models so it seems likely that induction heads would work the same way
 The overall case is characterised as **circumstantial** but feels very promising.
 
-LQ: could we use synthetic data to prompt a transformer to learn a certain abstract connection in order to predict correctly? And compell this to be done with and without induction heads? Knocking out induction heads during training?
+LQ: could we use synthetic data to prompt a transformer to learn a certain abstract connection in order to predict 
+correctly? And compell this to be done with and without induction heads? Knocking out induction heads during training?
 
 ## Phase Changes
 
-The language model phase change may be generally important. NN capabilities sometimes abruptly change as they train or scale, meaning dangerous NN behaviour can emergy abruptly too, e.g. violent reward hacking. If we could predict these phase changes or immediately shut down models when they happen we could improve safety.
+The language model phase change may be generally important. NN capabilities sometimes abruptly change as they train or 
+scale, meaning dangerous NN behaviour can emergy abruptly too, e.g. violent reward hacking. If we could predict these 
+phase changes or immediately shut down models when they happen we could improve safety.
 
 > the phase change we observe forms an interesting potential bridge between the microscopic domain of interpretability and the macroscopic domain of scaling laws and learning dynamics.
 
 ### Glossary
 
-Mechanistic interpretability: attempting to reverse engineer the detailed computations performed by a model
-In-context learning: giving a LLM context on a task at query-time before asking the LLM to perform the task to reduce the loss, e.g. giving a model a few examples of french-to-english translations at query-time then asking it to translate a new phrase results in higher quality translations. 
-
-Multilayer perceptron: fully connected feedforward neural network
-Few shot learning: training a model to complete a task from only a few examples
-
-Inductive reasoning: drawing conclusions by going from the specific to the general, e.g. every raven in a random sample of 3200 ravens is black -> this strongly supports the conclusion that all ravens are black.
-Deductive reasoning: drawing conclusions by going from the general to the specific.
+* Mechanistic interpretability: attempting to reverse engineer the detailed computations performed by a model
+* In-context learning: giving a LLM context on a task at query-time before asking the LLM to perform the task to reduce 
+the loss, e.g. giving a model a few examples of french-to-english translations at query-time then asking it to translate 
+a new phrase results in higher quality translations. 
+* Multilayer perceptron: fully connected feedforward neural network
+* Few shot learning: training a model to complete a task from only a few examples
+* Inductive reasoning: drawing conclusions by going from the specific to the general, e.g. every raven in a random sample 
+of 3200 ravens is black -> this strongly supports the conclusion that all ravens are black.
+* Deductive reasoning: drawing conclusions by going from the general to the specific.
 
 ### Acronyms
 
-MLP: multilayer perceptron
-LLM: large language model
+* MLP: multilayer perceptron
+* LLM: large language model
