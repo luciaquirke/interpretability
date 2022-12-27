@@ -35,3 +35,4 @@ The matplotlib charts are hackily converted from the Altair plots because they'r
 * Prefix matching score to detect induction heads by measuring attention heads' ability to perform the task we used to define induction heads: prefix matching then copying
 
 * Smeared key parameter to allow one layer models to form induction heads
+* "direct-path" logit attribution
