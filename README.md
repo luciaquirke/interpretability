@@ -10,14 +10,21 @@ I'm attempting to replicate and extend the paper [In-Context Learning and Induct
   - [x] Set up bazel
   - [x] Extract classes out
   - [x] Convert plots to matplotlib
+ - [ ] Work through Neel Nanda's transformer workbooks
+ 
+### Annotated Transformer
   
-Will add tests after the implementation proves useful.
-  
+Will add tests if the implementation proves useful. 
+
 I chose Bazel because I use it at work and it's super useful for Java + I wanted to learn more about it. It's good overall but doesn't have good support for specifying a hermetic Python interpreter - the Bazel IntelliJ plugin doesn't recognise the specified interpreter and raises an error for every package import. So I stuck with a non-hermetic venv interpreter - Python 3.9. 
 
 The complex translation example has a bug where the pytorch dataset it uses has an [introduced error with a fix which hasn't been released yet](https://github.com/pytorch/text/issues/2001). I haven't fixed it yet because I don't know if I need it. If I need it I'll install a nightly build of Pytorch/Torchtext or versions from before the bug was introduced.
 
 The matplotlib charts are hackily converted from the Altair plots because they're not that valuable for now. I might convert them to seaborn if I start making visualisations.
+
+### Neel Nanda workbooks and tutorials
+
+The transformer workbook includes some useful libraries (einops and easy transformer) that I'll use going forward instead of modifying the Annotated Transformer implementation.
 
 ## Part 2: Design for induction heads replication
 - [x] Read + write notes for Induction Heads paper
