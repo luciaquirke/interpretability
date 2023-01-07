@@ -24,7 +24,16 @@ The matplotlib charts are hackily converted from the Altair plots because they'r
 
 ### Neel Nanda workbooks and tutorials
 
-The transformer workbook includes some useful libraries (einops and easy transformer) that I'll use going forward instead of modifying the Annotated Transformer implementation.
+https://colab.research.google.com/drive/1oGdXjrRcfSwXI0xJEu6oo-b1ygtXMsfj#scrollTo=cAudhHBe-TX8
+
+The transformer workbook includes a cleaner implementation without the encoder-decoder structure and some useful libraries that I'll use going forward instead of modifying the Annotated Transformer implementation.
+- einops
+- easy transformer
+- tqdm progress bar
+And some new methods:
+- np.einsum
+- [torch.gather](https://stackoverflow.com/questions/50999977/what-does-the-gather-function-do-in-pytorch-in-layman-terms)
+- torch.squeeze
 
 ## Part 2: Design for induction heads replication
 - [x] Read + write notes for Induction Heads paper
@@ -33,7 +42,7 @@ The transformer workbook includes some useful libraries (einops and easy transfo
 - [ ] Investigate uncertainties in design doc
 - [ ] Final design doc
 
-### Components I'll need for the replication
+### Components for replication
 
 * Per-token loss analysis:
 
