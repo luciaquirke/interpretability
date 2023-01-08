@@ -31,7 +31,7 @@ The transformer workbook includes a cleaner implementation without the encoder-d
 - easy transformer
 - tqdm progress bar
 And some new methods:
-- np.einsum
+- [np.einsum](https://en.wikipedia.org/wiki/Einstein_notation)
 - [torch.gather](https://stackoverflow.com/questions/50999977/what-does-the-gather-function-do-in-pytorch-in-layman-terms)
 - torch.squeeze
 
