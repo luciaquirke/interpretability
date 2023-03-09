@@ -10,7 +10,7 @@ I'm attempting to replicate and extend the paper [In-Context Learning and Induct
   - [x] Set up bazel
   - [x] Extract classes out
   - [x] Convert plots to matplotlib
- - [ ] Work through Neel Nanda's transformer workbooks
+ - [x] Work through Neel Nanda's transformer workbooks
  
 ### Annotated Transformer
   
