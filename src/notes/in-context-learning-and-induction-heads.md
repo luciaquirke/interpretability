@@ -60,12 +60,14 @@ The language model phase change may be generally important. NN capabilities some
 ### Glossary
 
 Mechanistic interpretability: attempting to reverse engineer the detailed computations performed by a model
+
 In-context learning: giving a LLM context on a task at query-time before asking the LLM to perform the task to reduce the loss, e.g. giving a model a few examples of french-to-english translations at query-time then asking it to translate a new phrase results in higher quality translations. 
 
 Multilayer perceptron: fully connected feedforward neural network
 Few shot learning: training a model to complete a task from only a few examples
 
 Inductive reasoning: drawing conclusions by going from the specific to the general, e.g. every raven in a random sample of 3200 ravens is black -> this strongly supports the conclusion that all ravens are black.
+
 Deductive reasoning: drawing conclusions by going from the general to the specific.
 
 ### Acronyms
